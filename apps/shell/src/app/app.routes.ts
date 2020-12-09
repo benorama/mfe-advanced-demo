@@ -15,14 +15,8 @@ export const APP_ROUTES: Routes = [
     },
     {
         path: 'counter',
-        // Lazy loaded local module
-        loadChildren: () => import('./counter/counter-route.module').then(m => m.CounterRouteModule),
-        canActivate: [AuthGuard],
-    },
-    /*{
-        path: 'counter',
         // Lazy loaded federated module
         loadChildren: () => import('counter/CounterRouteModule').then((m) => m.CounterRouteModule),
         canActivate: [AuthGuard],
-    },*/
+    },
 ];

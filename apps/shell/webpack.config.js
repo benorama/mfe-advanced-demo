@@ -26,6 +26,9 @@ module.exports = {
                 "@angular/core": {singleton: true, strictVersion: false},
                 "@angular/common": {singleton: true, strictVersion: false},
                 "@angular/router": {singleton: true, strictVersion: false},
+                "@ngrx/effects": {singleton: true, strictVersion: true},
+                "@ngrx/router-store": {singleton: true, strictVersion: true},
+                "@ngrx/store": {singleton: true, strictVersion: true},
 
                 ...sharedMappings.getDescriptors()
             }
