@@ -9,7 +9,7 @@ sharedMappings.register(
 
 module.exports = {
     output: {
-        uniqueName: "counter"
+        uniqueName: "counter-mfe"
     },
     optimization: {
         // Only needed to bypass a temporary bug
@@ -21,8 +21,7 @@ module.exports = {
             name: "counter",
             filename: "counterRemoteEntry.js",
             exposes: {
-                './CounterRouteModule': './apps/counter/src/app/counter/counter-route.module.ts',
-                //'./CounterAppComponent': './apps/counter/src/app/app.component.ts',
+                './counter-route.module': './apps/counter-mfe/src/app/counter/counter-route.module.ts'
             },
 
             shared: {
@@ -33,7 +32,8 @@ module.exports = {
                 "@ngrx/router-store": {singleton: true, strictVersion: true},
                 "@ngrx/store": {singleton: true, strictVersion: true},
 
-                ...sharedMappings.getDescriptors()
+                // @ben Disabled, does not work (build step stuck)
+                // ...sharedMappings.getDescriptors()
             }
 
         }),

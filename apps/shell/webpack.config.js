@@ -5,7 +5,7 @@ const path = require("path");
 const sharedMappings = new mf.SharedMappings();
 sharedMappings.register(
     path.join(__dirname, '../../tsconfig.base.json'),
-    ['@mfe-nx-demo/auth-store']);
+    ['@demo/auth-lib']);
 
 module.exports = {
     output: {
@@ -19,7 +19,7 @@ module.exports = {
         new ModuleFederationPlugin({
 
             remotes: {
-                 "counter": "counter@http://localhost:3000/counterRemoteEntry.js",
+                 "counter-remote": "counter@http://localhost:3000/counterRemoteEntry.js",
             },
 
             shared: {
@@ -30,7 +30,8 @@ module.exports = {
                 "@ngrx/router-store": {singleton: true, strictVersion: true},
                 "@ngrx/store": {singleton: true, strictVersion: true},
 
-                ...sharedMappings.getDescriptors()
+                // @ben Disabled, does not work (build step stuck)
+                // ...sharedMappings.getDescriptors()
             }
 
         }),

@@ -3,8 +3,7 @@ import {Component, HostBinding} from '@angular/core';
 import {select, Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
 
-import {AuthState} from './store/auth.state';
-import {AUTH_FEATURE_KEY} from './store/auth.reducer';
+import {AUTH_FEATURE_KEY, AuthState} from '@demo/auth-lib';
 
 @Component({
     selector: 'app-root',

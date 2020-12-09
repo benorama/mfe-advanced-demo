@@ -101,66 +101,66 @@
                 }
             }
         },
-        "auth-store": {
+        "auth-lib": {
             "projectType": "library",
-            "root": "libs/auth-store",
-            "sourceRoot": "libs/auth-store/src",
+            "root": "libs/auth-lib",
+            "sourceRoot": "libs/auth-lib/src",
             "prefix": "mfe-nx-demo",
             "architect": {
                 "lint": {
                     "builder": "@nrwl/linter:eslint",
                     "options": {
                         "lintFilePatterns": [
-                            "libs/auth-store/src/**/*.ts"
+                            "libs/auth-lib/src/**/*.ts"
                         ]
                     }
                 },
                 "test": {
                     "builder": "@nrwl/jest:jest",
                     "options": {
-                        "jestConfig": "libs/auth-store/jest.config.js",
+                        "jestConfig": "libs/auth-lib/jest.config.js",
                         "passWithNoTests": true
                     }
                 }
             },
             "schematics": {}
         },
-        "counter": {
+        "counter-mfe": {
             "projectType": "application",
             "schematics": {
                 "@schematics/angular:component": {
                     "style": "scss"
                 }
             },
-            "root": "apps/counter",
-            "sourceRoot": "apps/counter/src",
+            "root": "apps/counter-mfe",
+            "sourceRoot": "apps/counter-mfe/src",
             "prefix": "mfe-nx-demo",
             "architect": {
                 "build": {
                     "builder": "ngx-build-plus:browser",
                     "options": {
-                        "outputPath": "dist/apps/counter",
-                        "index": "apps/counter/src/index.html",
-                        "main": "apps/counter/src/main.ts",
-                        "polyfills": "apps/counter/src/polyfills.ts",
-                        "tsConfig": "apps/counter/tsconfig.app.json",
+                        "outputPath": "dist/apps/counter-mfe",
+                        "index": "apps/counter-mfe/src/index.html",
+                        "main": "apps/counter-mfe/src/main.ts",
+                        "polyfills": "apps/counter-mfe/src/polyfills.ts",
+                        "tsConfig": "apps/counter-mfe/tsconfig.app.json",
                         "aot": true,
                         "assets": [
-                            "apps/counter/src/favicon.ico",
-                            "apps/counter/src/assets"
+                            "apps/counter-mfe/src/favicon.ico",
+                            "apps/counter-mfe/src/assets"
                         ],
                         "styles": [
-                            "apps/counter/src/styles.scss"
+                            "apps/counter-mfe/src/styles.scss"
                         ],
                         "scripts": [],
-                        "extraWebpackConfig": "apps/counter/webpack.config.js"
+                        "extraWebpackConfig": "apps/counter-mfe/webpack.config.js"
                     },
                     "configurations": {
                         "production": {
                             "fileReplacements": [
                                 {
-                                    "replace": "apps/counter/src/environments/environment.ts",
-                                    "with": "apps/counter/src/environments/environment.prod.ts"
+                                    "replace": "apps/counter-mfe/src/environments/environment.ts",
+                                    "with": "apps/counter-mfe/src/environments/environment.prod.ts"
                                 }
                             ],
                             "optimization": true,
@@ -182,44 +182,44 @@
                                     "maximumError": "10kb"
                                 }
                             ],
-                            "extraWebpackConfig": "apps/counter/webpack.prod.config.js"
+                            "extraWebpackConfig": "apps/counter-mfe/webpack.prod.config.js"
                         }
                     }
                 },
                 "serve": {
                     "builder": "ngx-build-plus:dev-server",
                     "options": {
-                        "browserTarget": "counter:build",
-                        "extraWebpackConfig": "apps/counter/webpack.config.js",
+                        "browserTarget": "counter-mfe:build",
+                        "extraWebpackConfig": "apps/counter-mfe/webpack.config.js",
                         "port": 3000
                     },
                     "configurations": {
                         "production": {
-                            "browserTarget": "counter:build:production",
-                            "extraWebpackConfig": "apps/counter/webpack.prod.config.js"
+                            "browserTarget": "counter-mfe:build:production",
+                            "extraWebpackConfig": "apps/counter-mfe/webpack.prod.config.js"
                         }
                     }
                 },
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "counter:build"
+                        "browserTarget": "counter-mfe:build"
                     }
                 },
                 "lint": {
                     "builder": "@nrwl/linter:eslint",
                     "options": {
                         "lintFilePatterns": [
-                            "apps/counter/src/**/*.ts"
+                            "apps/counter-mfe/src/**/*.ts"
                         ]
                     }
                 },
                 "test": {
                     "builder": "ngx-build-plus:karma",
                     "options": {
-                        "jestConfig": "apps/counter/jest.config.js",
+                        "jestConfig": "apps/counter-mfe/jest.config.js",
                         "passWithNoTests": true,
-                        "extraWebpackConfig": "apps/counter/webpack.config.js"
+                        "extraWebpackConfig": "apps/counter-mfe/webpack.config.js"
                     }
                 }
             }

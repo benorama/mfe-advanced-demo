@@ -17,5 +17,5 @@ import {AuthGuard} from './auth.guard';
         AuthGuard
     ]
 })
-export class AuthStoreModule {
+export class AuthLibModule {
 }

@@ -1,5 +1,5 @@
 module.exports = {
-    displayName: 'auth-store',
+    displayName: 'auth-lib',
     preset: '../../jest.preset.js',
     setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
     globals: {
@@ -14,7 +14,7 @@ module.exports = {
             },
         },
     },
-    coverageDirectory: '../../coverage/libs/auth-store',
+    coverageDirectory: '../../coverage/libs/auth-lib',
     snapshotSerializers: [
         'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
         'jest-preset-angular/build/AngularSnapshotSerializer.js',

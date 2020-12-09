@@ -21,7 +21,7 @@
         "skipDefaultLibCheck": true,
         "baseUrl": ".",
         "paths": {
-            //"@mfe-nx-demo/auth-store": ["libs/auth-store/src/index.ts"]
+            "@demo/auth-lib": ["libs/auth-lib/src/index.ts"]
         }
     },
     "exclude": [

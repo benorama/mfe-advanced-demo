@@ -7,11 +7,12 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {routerReducer, StoreRouterConnectingModule} from '@ngrx/router-store';
 import {environment} from '../environments/environment';
 
+import {AuthLibModule} from '@demo/auth-lib';
+
 import {AppComponent} from './app.component';
+import {AppEffects} from './app.effects';
 import {APP_ROUTES} from './app.routes';
 import {HomeComponent} from './home/home.component';
-import {AuthStoreModule} from './store/auth-store.module';
-import {AppEffects} from './app.effects';
 
 @NgModule({
     bootstrap: [
@@ -31,7 +32,7 @@ import {AppEffects} from './app.effects';
         EffectsModule.forRoot([AppEffects]),
         !environment.production ? StoreDevtoolsModule.instrument({maxAge: 25}) : [],
         // Local modules
-        AuthStoreModule,
+        AuthLibModule,
     ],
     providers: [
     ]

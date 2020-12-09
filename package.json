@@ -29,7 +29,7 @@
   },
   "private": true,
   "resolutions": {
-    "webpack": "^5.0.0"
+    "webpack": "^5.4.0"
   },
   "dependencies": {
     "@angular-architects/module-federation": "^1.2.2",

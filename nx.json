@@ -28,13 +28,13 @@
         }
     },
     "projects": {
-        "counter": {
+        "auth-lib": {
+            "tags": []
+        },
+        "counter-mfe": {
             "tags": []
         },
         "shell": {
-            "tags": []
-        },
-        "auth-store": {
             "tags": []
         }
     }

@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 
 import {Store} from '@ngrx/store';
 
-import {AuthActions} from '../store/auth.actions';
+import {AuthActions} from '@demo/auth-lib';
 
 @Component({
     selector: 'app-login-page',
