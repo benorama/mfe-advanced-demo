@@ -10,7 +10,7 @@
       },
       "root": "apps/shell",
       "sourceRoot": "apps/shell/src",
-      "prefix": "nx-federated-workspace",
+      "prefix": "mfe-nx-demo",
       "architect": {
         "build": {
           "builder": "ngx-build-plus:browser",
@@ -98,7 +98,7 @@
       "projectType": "library",
       "root": "libs/auth-store",
       "sourceRoot": "libs/auth-store/src",
-      "prefix": "nx-federated-workspace",
+      "prefix": "mfe-nx-demo",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",

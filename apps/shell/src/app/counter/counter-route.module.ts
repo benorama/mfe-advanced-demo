@@ -3,22 +3,15 @@ import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 
 import {CounterPageComponent} from './counter-page.component';
-import {CounterStoreModule} from "./store/counter-store.module";
+import {CounterStoreModule} from './store/counter-store.module';
+import {COUNTER_ROUTES} from './counter.routes';
 
 @NgModule({
     declarations: [CounterPageComponent],
     imports: [
         CommonModule,
-        RouterModule.forChild([
-            {
-                path: '',
-                component: CounterPageComponent,
-            },
-        ]),
+        RouterModule.forChild(COUNTER_ROUTES),
         CounterStoreModule
-    ],
-    exports: [
-        CounterPageComponent
     ]
 })
 export class CounterRouteModule {

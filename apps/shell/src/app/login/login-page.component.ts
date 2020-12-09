@@ -1,14 +1,15 @@
 import {Component} from '@angular/core';
+
 import {Store} from '@ngrx/store';
 
-import {AuthActions} from '@nx-federated-workspace/auth-store';
+import {AuthActions} from '../store/auth.actions';
 
 @Component({
-    selector: 'app-auth-page',
-    templateUrl: './auth-page.component.html',
-    styleUrls: ['./auth-page.component.scss']
+    selector: 'app-login-page',
+    templateUrl: './login-page.component.html',
+    styleUrls: ['./login-page.component.scss']
 })
-export class AuthPageComponent {
+export class LoginPageComponent {
 
     constructor(private store: Store<any>) {}
 

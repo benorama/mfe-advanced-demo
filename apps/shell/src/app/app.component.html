@@ -12,17 +12,18 @@
                    [routerLinkActiveOptions]="{exact: true}">
                     Home
                 </a>
-                <!-- <a *ngIf="(auth$ | async)?.authenticated"
+                <a *ngIf="(auth$ | async)?.authenticated"
                    class="nav-link"
                    routerLink="/counter"
                    routerLinkActive="active">
                     Counter
                 </a>
-                <a class="nav-link"
-                   routerLink="/auth"
+                <a *ngIf="!(auth$ | async)?.authenticated"
+                   class="nav-link"
+                   routerLink="/login"
                    routerLinkActive="active">
                     Login
-                </a> -->
+                </a>
             </nav>
         </div>
     </header>

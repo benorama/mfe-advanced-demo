@@ -9,21 +9,19 @@
         "experimentalDecorators": true,
         "importHelpers": true,
         "target": "es2015",
-        "module": "esnext",
+        "module": "es2020",
         "typeRoots": [
             "node_modules/@types"
         ],
         "lib": [
-            "es2017",
+            "es2018",
             "dom"
         ],
         "skipLibCheck": true,
         "skipDefaultLibCheck": true,
         "baseUrl": ".",
         "paths": {
-            "@nx-federated-workspace/auth-store": [
-                "libs/auth-store/src/index.ts"
-            ]
+            //"@mfe-nx-demo/auth-store": ["libs/auth-store/src/index.ts"]
         }
     },
     "exclude": [

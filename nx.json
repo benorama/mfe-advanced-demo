@@ -1,5 +1,5 @@
 {
-  "npmScope": "nx-federated-workspace",
+  "npmScope": "mfe-nx-demo",
   "affected": {
     "defaultBase": "master"
   },
