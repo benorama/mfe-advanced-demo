@@ -23,14 +23,15 @@ import {AppEffects} from './app.effects';
     ],
     imports: [
         BrowserModule,
-        AuthStoreModule,
         RouterModule.forRoot(APP_ROUTES),
         StoreModule.forRoot({
             router: routerReducer,
         }),
         StoreRouterConnectingModule.forRoot(),
         EffectsModule.forRoot([AppEffects]),
-        !environment.production ? StoreDevtoolsModule.instrument({maxAge: 25}) : []
+        !environment.production ? StoreDevtoolsModule.instrument({maxAge: 25}) : [],
+        // Local modules
+        AuthStoreModule,
     ],
     providers: [
     ]

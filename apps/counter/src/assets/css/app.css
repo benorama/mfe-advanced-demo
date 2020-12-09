@@ -1,0 +1,11 @@
+.cover-container {
+    min-width: 600px;
+}
+
+.user-name {
+    font-weight: bold;
+}
+
+#loginForm {
+    max-width: 350px;
+}

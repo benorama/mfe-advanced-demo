@@ -10,18 +10,19 @@ export const APP_ROUTES: Routes = [
     },
     {
         path: 'login',
+        // Lazy loaded local module
         loadChildren: () => import('./login/login-route.module').then(m => m.LoginRouteModule)
     },
     {
         path: 'counter',
+        // Lazy loaded local module
         loadChildren: () => import('./counter/counter-route.module').then(m => m.CounterRouteModule),
         canActivate: [AuthGuard],
     },
     /*{
-        path: 'todo',
-        loadChildren: () =>
-            import('mfe1/TodoModule').then((m) => {
-                return m.TodoModule;
-            }),
+        path: 'counter',
+        // Lazy loaded federated module
+        loadChildren: () => import('counter/CounterRouteModule').then((m) => m.CounterRouteModule),
+        canActivate: [AuthGuard],
     },*/
 ];

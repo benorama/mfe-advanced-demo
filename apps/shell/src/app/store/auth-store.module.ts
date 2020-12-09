@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {StoreModule} from '@ngrx/store';
 
 import {AUTH_FEATURE_KEY, authReducer} from './auth.reducer';
-import {AuthGuard} from "./auth.guard";
+import {AuthGuard} from './auth.guard';
 
 @NgModule({
     imports: [

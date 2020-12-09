@@ -18,18 +18,9 @@ module.exports = {
     plugins: [
         new ModuleFederationPlugin({
 
-            // For remotes (please adjust)
-            // name: "shell",
-            // filename: "remoteEntry.js",
-            // exposes: {
-            //     './Component': './apps/shell/src/app/app.component.ts',
-            // },
-
-            // For hosts (please adjust)
-            // remotes: {
-            //     "mfe1": "mfe1@http://localhost:3000/remoteEntry.js",
-
-            // },
+            remotes: {
+                 "counter": "counter@http://localhost:3000/counterRemoteEntry.js",
+            },
 
             shared: {
                 "@angular/core": {singleton: true, strictVersion: false},
