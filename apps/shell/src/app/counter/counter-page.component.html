@@ -1,0 +1,13 @@
+<h4>
+    Counter example
+</h4>
+<h1>
+    {{(counter$ | async)?.total}}
+</h1>
+<p class="lead">
+    <button (click)="increment()" class="btn btn-primary me-3">+1</button>
+    <button (click)="decrement()" class="btn btn-primary">-1</button>
+</p>
+<p>
+    <button (click)="reset()" class="btn btn-sm">Reset</button>
+</p>

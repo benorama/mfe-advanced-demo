@@ -1,0 +1,18 @@
+<div class="d-flex justify-content-center">
+    <form id="loginForm" class="row row-cols-lg-auto align-items-center">
+        <div class="col-12">
+            <input class="form-control"
+                   name="userName" #userName
+                   placeholder="Username"
+                   type="text"
+                   (keyup.enter)="login(userName.value)"/>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary"
+                    type="submit"
+                    (click)="login(userName.value)">
+                Login
+            </button>
+        </div>
+    </form>
+</div>
