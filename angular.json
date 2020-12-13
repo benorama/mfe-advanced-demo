@@ -191,7 +191,7 @@
                     "options": {
                         "browserTarget": "counter-mfe:build",
                         "extraWebpackConfig": "apps/counter-mfe/webpack.config.js",
-                        "port": 3000
+                        "port": 4300
                     },
                     "configurations": {
                         "production": {

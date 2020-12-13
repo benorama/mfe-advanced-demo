@@ -1,98 +1,42 @@
-# NxFederatedWorkspace
+# Micro-frontends Advanced Demo
 
-This project was generated using [Nx](https://nx.dev).
+This is a demo used as a proof of concept to build a micro-frontends architecture with [Angular 11](http://angular.io), [Nx Workspace](https://nx.dev/angular) and [Ngrx Store](http://ngrx.io).
 
-<p align="center"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
+The demo is based on two apps:
+- a **counter-mfe** micro-app with a Counter module, which provides a working counter feature with it's own `counter` ngrx store (state and actions),
+- a main **shell** app which provides the default home page, an authentication feature with it's own `auth` ngrx store (state and action) from an auth lib. 
 
-🔎 **Nx is a set of Extensible Dev Tools for Monorepos.**
+Once authenticated on the shell app, it's possible to navigate to the counter feature and loads the remote Counter module from **counter-mfe** app.
 
-## Quick Start & Documentation
+![Apps diagram](mfe-demo-diagram.png)
 
-[Nx Documentation](https://nx.dev/angular)
+Note: for a more basic demo, you might check [MFE basic demo](https://github.com/benorama/mfe-basic-demo), with a step-by-step guide to create and configure a micro-frontend workspace. 
 
-[10-minute video showing all Nx features](https://nx.dev/angular/getting-started/what-is-nx)
+Note 2: the initial workspace was created with Nx CLI.
 
-[Interactive Tutorial](https://nx.dev/angular/tutorial/01-create-application)
+```
+npx create-nx-workspace@latest mfe-advanced-demo --preset="angular" --appName="shell" --style="scss"
+ng g @nrwl/angular:app mfe1
+```
 
-## Adding capabilities to your workspace
+## Running the demo apps
 
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
+Run the **counter-mfe** micro-app and go to http://localhost:4300.
 
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
+```
+nx serve counter-mfe
+```
 
-Below are our core plugins:
+![Counter MFE](mfe-counter.png)
 
-- [Angular](https://angular.io)
-  - `ng add @nrwl/angular`
-- [React](https://reactjs.org)
-  - `ng add @nrwl/react`
-- Web (no framework frontends)
-  - `ng add @nrwl/web`
-- [Nest](https://nestjs.com)
-  - `ng add @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `ng add @nrwl/express`
-- [Node](https://nodejs.org)
-  - `ng add @nrwl/node`
+Run the **shell** main app and go to http://localhost:4200.
 
-There are also many [community plugins](https://nx.dev/nx-community) you could add.
+```
+nx serve shell
+```
 
-## Generate an application
+![Apps diagram](mfe-shell-home.png)
 
-Run `ng g @nrwl/angular:app my-app` to generate an application.
+Login and navigate to Counter MFE, which will load the Counter module from the **counter-mfe** micro-app.
 
-> You can use any of the plugins above to generate applications as well.
-
-When using Nx, you can create multiple applications and libraries in the same workspace.
-
-## Generate a library
-
-Run `ng g @nrwl/angular:lib my-lib` to generate a library.
-
-> You can also use any of the plugins above to generate libraries as well.
-
-Libraries are sharable across libraries and applications. They can be imported from `@nx-federated-workspace/mylib`.
-
-## Development server
-
-Run `ng serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng g component my-component --project=my-app` to generate a new component.
-
-## Build
-
-Run `ng build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test my-app` to execute the unit tests via [Jest](https://jestjs.io).
-
-Run `nx affected:test` to execute the unit tests affected by a change.
-
-## Running end-to-end tests
-
-Run `ng e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
-
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
-
-## Understand your workspace
-
-Run `nx dep-graph` to see a diagram of the dependencies of your projects.
-
-## Further help
-
-Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
-
-## ☁ Nx Cloud
-
-### Computation Memoization in the Cloud
-
-<p align="center"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
-
-Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
-
-Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
-
-Visit [Nx Cloud](https://nx.app/) to learn more.
+![Apps diagram](mfe-shell-counter.png)

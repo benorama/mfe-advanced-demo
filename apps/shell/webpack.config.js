@@ -19,7 +19,7 @@ module.exports = {
         new ModuleFederationPlugin({
 
             remotes: {
-                 "counter-remote": "counter@http://localhost:3000/counterRemoteEntry.js",
+                 "counter-remote": "counter@http://localhost:4300/counterRemoteEntry.js",
             },
 
             shared: {
