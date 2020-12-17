@@ -2,6 +2,8 @@
 
 This is a demo used as a proof of concept to build a micro-frontends architecture with [Angular 11](http://angular.io), [Nx Workspace](https://nx.dev/angular) and [Ngrx Store](http://ngrx.io).
 
+Please check the Medium article [How to build a micro-frontends architecture, with Angular and Webpack Module Federation](https://medium.com/agorapulse-stories/building-a-micro-frontends-architecture-in-2021-with-angular-and-webpack-module-federation-50d073617645?source=friends_link&sk=ec61391b28ccd0d195e84b7dfd1a531c) to get more context about this demo.
+
 The demo is based on two apps:
 - a **counter-mfe** micro-app with a Counter module, which provides a working counter feature with it's own `counter` ngrx store (state and actions),
 - a main **shell** app which provides the default home page, an authentication feature with it's own `auth` ngrx store (state and action) from an auth lib. 
