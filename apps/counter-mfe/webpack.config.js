@@ -9,7 +9,8 @@ sharedMappings.register(
 
 module.exports = {
     output: {
-        uniqueName: "counter-mfe"
+        uniqueName: "counter-mfe",
+        publicPath: "auto"
     },
     optimization: {
         // Only needed to bypass a temporary bug
