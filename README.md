@@ -21,6 +21,14 @@ npx create-nx-workspace@latest mfe-advanced-demo --preset="angular" --appName="s
 ng g @nrwl/angular:app mfe1
 ```
 
+## Live demo apps
+
+You can access both apps here:
+
+- **counter-mfe** [http://mfe-demo-counter.s3-website.eu-west-3.amazonaws.com](http://mfe-demo-counter.s3-website.eu-west-3.amazonaws.com)
+- **shell** [http://mfe-demo-shell.s3-website.eu-west-3.amazonaws.com](http://mfe-demo-shell.s3-website.eu-west-3.amazonaws.com)
+
+
 ## Running the demo apps
 
 Run the **counter-mfe** micro-app and go to http://localhost:4300.
