@@ -9,13 +9,8 @@
         "importHelpers": true,
         "target": "es2015",
         "module": "es2020",
-        "typeRoots": [
-            "node_modules/@types"
-        ],
-        "lib": [
-            "es2018",
-            "dom"
-        ],
+        "typeRoots": ["node_modules/@types"],
+        "lib": ["es2018", "dom"],
         "skipLibCheck": true,
         "skipDefaultLibCheck": true,
         "baseUrl": ".",
@@ -23,8 +18,5 @@
             "@demo/auth-lib": ["libs/auth-lib/src/index.ts"]
         }
     },
-    "exclude": [
-        "node_modules",
-        "tmp"
-    ]
+    "exclude": ["node_modules", "tmp"]
 }

@@ -1,7 +1,9 @@
+const { getJestProjects } = require('@nrwl/jest');
+
 module.exports = {
-  projects: [
-    '<rootDir>/apps/shell',
-    '<rootDir>/libs/auth-lib',
-    '<rootDir>/apps/counter',
-  ],
+    projects: [
+        ...getJestProjects(),
+        '<rootDir>/apps/shell',
+        '<rootDir>/apps/counter',
+    ],
 };

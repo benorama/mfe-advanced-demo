@@ -1,109 +1,6 @@
 {
     "version": 1,
     "projects": {
-        "shell": {
-            "projectType": "application",
-            "schematics": {
-                "@schematics/angular:component": {
-                    "style": "scss"
-                },
-                "@schematics/angular:application": {
-                    "strict": true
-                }
-            },
-            "root": "apps/shell",
-            "sourceRoot": "apps/shell/src",
-            "prefix": "mfe-nx-demo",
-            "architect": {
-                "build": {
-                    "builder": "ngx-build-plus:browser",
-                    "options": {
-                        "outputPath": "dist/apps/shell",
-                        "index": "apps/shell/src/index.html",
-                        "main": "apps/shell/src/main.ts",
-                        "polyfills": "apps/shell/src/polyfills.ts",
-                        "tsConfig": "apps/shell/tsconfig.app.json",
-                        "assets": [
-                            "apps/shell/src/favicon.ico",
-                            "apps/shell/src/assets"
-                        ],
-                        "styles": [
-                            "apps/shell/src/styles.scss"
-                        ],
-                        "scripts": [],
-                        "extraWebpackConfig": "apps/shell/webpack.config.js"
-                    },
-                    "configurations": {
-                        "production": {
-                            "budgets": [
-                                {
-                                    "type": "initial",
-                                    "maximumWarning": "500kb",
-                                    "maximumError": "1mb"
-                                },
-                                {
-                                    "type": "anyComponentStyle",
-                                    "maximumWarning": "2kb",
-                                    "maximumError": "4kb"
-                                }
-                            ],
-                            "fileReplacements": [
-                                {
-                                    "replace": "apps/shell/src/environments/environment.ts",
-                                    "with": "apps/shell/src/environments/environment.prod.ts"
-                                }
-                            ],
-                            "outputHashing": "all",
-                            "extraWebpackConfig": "apps/shell/webpack.prod.config.js"
-                        },
-                        "development": {
-                            "buildOptimizer": false,
-                            "optimization": false,
-                            "vendorChunk": true,
-                            "extractLicenses": false,
-                            "sourceMap": true,
-                            "namedChunks": true
-                        }
-                    }
-                },
-                "serve": {
-                    "builder": "ngx-build-plus:dev-server",
-                    "options": {
-                        "browserTarget": "shell:build",
-                        "extraWebpackConfig": "apps/shell/webpack.config.js",
-                        "port": 4200
-                    },
-                    "configurations": {
-                        "production": {
-                            "browserTarget": "shell:build:production",
-                            "extraWebpackConfig": "apps/shell/webpack.prod.config.js"
-                        }
-                    }
-                },
-                "extract-i18n": {
-                    "builder": "ngx-build-plus:extract-i18n",
-                    "options": {
-                        "browserTarget": "shell:build"
-                    }
-                },
-                "lint": {
-                    "builder": "@nrwl/linter:eslint",
-                    "options": {
-                        "lintFilePatterns": [
-                            "apps/shell/src/**/*.ts"
-                        ]
-                    }
-                },
-                "test": {
-                    "builder": "ngx-build-plus:karma",
-                    "options": {
-                        "jestConfig": "apps/shell/jest.config.js",
-                        "passWithNoTests": true,
-                        "extraWebpackConfig": "apps/shell/webpack.config.js"
-                    }
-                }
-            }
-        },
         "auth-lib": {
             "projectType": "library",
             "root": "libs/auth-lib",
@@ -113,9 +10,7 @@
                 "lint": {
                     "builder": "@nrwl/linter:eslint",
                     "options": {
-                        "lintFilePatterns": [
-                            "libs/auth-lib/src/**/*.ts"
-                        ]
+                        "lintFilePatterns": ["libs/auth-lib/src/**/*.ts"]
                     }
                 },
                 "test": {
@@ -154,9 +49,7 @@
                             "apps/counter-mfe/src/favicon.ico",
                             "apps/counter-mfe/src/assets"
                         ],
-                        "styles": [
-                            "apps/counter-mfe/src/styles.scss"
-                        ],
+                        "styles": ["apps/counter-mfe/src/styles.scss"],
                         "scripts": [],
                         "extraWebpackConfig": "apps/counter-mfe/webpack.config.js"
                     },
@@ -216,9 +109,7 @@
                 "lint": {
                     "builder": "@nrwl/linter:eslint",
                     "options": {
-                        "lintFilePatterns": [
-                            "apps/counter-mfe/src/**/*.ts"
-                        ]
+                        "lintFilePatterns": ["apps/counter-mfe/src/**/*.ts"]
                     }
                 },
                 "test": {
@@ -227,6 +118,102 @@
                         "jestConfig": "apps/counter-mfe/jest.config.js",
                         "passWithNoTests": true,
                         "extraWebpackConfig": "apps/counter-mfe/webpack.config.js"
+                    }
+                }
+            }
+        },
+        "shell": {
+            "projectType": "application",
+            "schematics": {
+                "@schematics/angular:component": {
+                    "style": "scss"
+                },
+                "@schematics/angular:application": {
+                    "strict": true
+                }
+            },
+            "root": "apps/shell",
+            "sourceRoot": "apps/shell/src",
+            "prefix": "mfe-nx-demo",
+            "architect": {
+                "build": {
+                    "builder": "ngx-build-plus:browser",
+                    "options": {
+                        "outputPath": "dist/apps/shell",
+                        "index": "apps/shell/src/index.html",
+                        "main": "apps/shell/src/main.ts",
+                        "polyfills": "apps/shell/src/polyfills.ts",
+                        "tsConfig": "apps/shell/tsconfig.app.json",
+                        "assets": ["apps/shell/src/favicon.ico", "apps/shell/src/assets"],
+                        "styles": ["apps/shell/src/styles.scss"],
+                        "scripts": [],
+                        "extraWebpackConfig": "apps/shell/webpack.config.js"
+                    },
+                    "configurations": {
+                        "production": {
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "500kb",
+                                    "maximumError": "1mb"
+                                },
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "2kb",
+                                    "maximumError": "4kb"
+                                }
+                            ],
+                            "fileReplacements": [
+                                {
+                                    "replace": "apps/shell/src/environments/environment.ts",
+                                    "with": "apps/shell/src/environments/environment.prod.ts"
+                                }
+                            ],
+                            "outputHashing": "all",
+                            "extraWebpackConfig": "apps/shell/webpack.prod.config.js"
+                        },
+                        "development": {
+                            "buildOptimizer": false,
+                            "optimization": false,
+                            "vendorChunk": true,
+                            "extractLicenses": false,
+                            "sourceMap": true,
+                            "namedChunks": true
+                        }
+                    }
+                },
+                "serve": {
+                    "builder": "ngx-build-plus:dev-server",
+                    "options": {
+                        "browserTarget": "shell:build",
+                        "extraWebpackConfig": "apps/shell/webpack.config.js",
+                        "port": 4200
+                    },
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "shell:build:production",
+                            "extraWebpackConfig": "apps/shell/webpack.prod.config.js"
+                        }
+                    }
+                },
+                "extract-i18n": {
+                    "builder": "ngx-build-plus:extract-i18n",
+                    "options": {
+                        "browserTarget": "shell:build"
+                    }
+                },
+                "lint": {
+                    "builder": "@nrwl/linter:eslint",
+                    "options": {
+                        "lintFilePatterns": ["apps/shell/src/**/*.ts"]
+                    }
+                },
+                "test": {
+                    "builder": "ngx-build-plus:karma",
+                    "options": {
+                        "jestConfig": "apps/shell/jest.config.js",
+                        "passWithNoTests": true,
+                        "extraWebpackConfig": "apps/shell/webpack.config.js"
                     }
                 }
             }
