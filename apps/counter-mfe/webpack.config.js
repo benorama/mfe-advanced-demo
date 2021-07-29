@@ -1,6 +1,7 @@
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const mf = require("@angular-architects/module-federation/webpack");
 const path = require("path");
+const share = mf.share;
 
 const sharedMappings = new mf.SharedMappings();
 sharedMappings.register(
@@ -16,6 +17,11 @@ module.exports = {
         // Only needed to bypass a temporary bug
         runtimeChunk: false
     },
+    resolve: {
+        alias: {
+            ...sharedMappings.getAliases(),
+        }
+    },
     plugins: [
         new ModuleFederationPlugin({
 
@@ -25,7 +31,7 @@ module.exports = {
                 './counter-route.module': './apps/counter-mfe/src/app/counter/counter-route.module.ts'
             },
 
-            shared: {
+            shared: share({
                 "@angular/core": {singleton: true, strictVersion: false},
                 "@angular/common": {singleton: true, strictVersion: false},
                 "@angular/router": {singleton: true, strictVersion: true},
@@ -33,9 +39,8 @@ module.exports = {
                 "@ngrx/router-store": {singleton: true, strictVersion: true},
                 "@ngrx/store": {singleton: true, strictVersion: true},
 
-                // @ben Disabled, does not work (build step stuck)
-                // ...sharedMappings.getDescriptors()
-            }
+                ...sharedMappings.getDescriptors()
+            })
 
         }),
         sharedMappings.getPlugin(),

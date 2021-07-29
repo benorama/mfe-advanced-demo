@@ -37,6 +37,8 @@ Run the **counter-mfe** micro-app and go to http://localhost:4300.
 nx serve counter-mfe
 ```
 
+Note: if you get `Cannot find module 'ngx-build-plus/package.json'`, run `npm i`.
+
 ![Counter MFE](mfe-counter.png)
 
 Run the **shell** main app and go to http://localhost:4200.
