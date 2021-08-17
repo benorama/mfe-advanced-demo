@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {Router} from '@angular/router';
-import {Actions, Effect, ofType} from '@ngrx/effects';
-import {tap} from 'rxjs/operators';
-import {AuthActions} from '@demo/auth-lib';
+import {Actions, createEffect, ofType} from '@ngrx/effects';
+import {map, tap} from 'rxjs/operators';
+import * as fromAuth from '@demo/auth-lib';
 
 @Injectable()
 export class AppEffects {
@@ -10,11 +10,18 @@ export class AppEffects {
     constructor(private actions$: Actions,
                 private router: Router) {}
 
-    @Effect({dispatch: false}) authLogin$ = this.actions$.pipe(
-        ofType(AuthActions.Types.LOGIN),
-        tap((action: AuthActions.LoginAction) => {
+    // Here we would do some HTTP API requests
+    login$ = createEffect(() => this.actions$.pipe(
+        ofType(fromAuth.login),
+        map((action) => fromAuth.loginSuccess({userName: action.userName}))
+    ));
+
+
+    loginSuccess$ = createEffect(() => this.actions$.pipe(
+        ofType(fromAuth.loginSuccess),
+        tap((action) => {
             this.router.navigate(['/counter']);
         })
-    );
+    ), { dispatch: false });
 
 }

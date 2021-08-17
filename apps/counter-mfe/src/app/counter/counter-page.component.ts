@@ -3,7 +3,7 @@ import {Component} from '@angular/core';
 import {select, Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
 
-import {CounterActions} from './store/counter.actions';
+import {increment, decrement, reset} from './store/counter.actions';
 import {CounterState} from './store/counter.state';
 import {COUNTER_FEATURE_KEY} from './store/counter.reducer';
 
@@ -21,15 +21,15 @@ export class CounterPageComponent {
     }
 
     decrement() {
-        this.store.dispatch(new CounterActions.DecrementAction());
+        this.store.dispatch(decrement());
     }
 
     increment() {
-        this.store.dispatch(new CounterActions.IncrementAction());
+        this.store.dispatch(increment());
     }
 
     reset() {
-        this.store.dispatch(new CounterActions.ResetAction());
+        this.store.dispatch(reset());
     }
 
 }

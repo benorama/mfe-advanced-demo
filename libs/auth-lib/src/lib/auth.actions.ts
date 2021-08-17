@@ -1,33 +1,13 @@
-import {Action} from '@ngrx/store';
+import {createAction, props} from '@ngrx/store';
 
-export namespace AuthActions {
-
-    export const Types = {
-        LOGIN: '[User] Login',
-        LOGOFF: '[User] Logoff'
-    };
-
-    export class LoginAction implements Action {
-        payload: string;
-        readonly type = Types.LOGIN;
-
-        constructor(userName: string) {
-            this.payload = userName;
-        }
-    }
-
-  export class LogoffAction implements Action {
-    payload: string;
-    readonly type = Types.LOGOFF;
-
-    constructor(userName: string) {
-      this.payload = userName;
-    }
-  }
-
-    export type Actions =
-        LogoffAction
-        | LoginAction;
-}
+export const login = createAction(
+    '[Auth] Login',
+    props<{ userName: string }>()
+);
+export const loginSuccess = createAction(
+    '[Auth] Login success',
+    props<{ userName: string }>()
+);
+export const logoff = createAction('[Auth] Logoff');
 
 

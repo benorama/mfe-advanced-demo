@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 
 import {Store} from '@ngrx/store';
 
-import {AuthActions} from '@demo/auth-lib';
+import {login} from '@demo/auth-lib';
 
 @Component({
     selector: 'app-login-page',
@@ -14,7 +14,7 @@ export class LoginPageComponent {
     constructor(private store: Store<any>) {}
 
     login(userName) {
-        this.store.dispatch(new AuthActions.LoginAction(userName));
+        this.store.dispatch(login({userName}));
         return false;
     }
 

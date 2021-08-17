@@ -2,14 +2,14 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {StoreModule} from '@ngrx/store';
 
-import {COUNTER_FEATURE_KEY, counterReducer} from './counter.reducer';
+import * as fromCounter from './counter.reducer';
 
 @NgModule({
     imports: [
         CommonModule,
         StoreModule.forFeature(
-            COUNTER_FEATURE_KEY,
-            counterReducer
+            fromCounter.COUNTER_FEATURE_KEY,
+            fromCounter.reducer
         )
     ],
 })
