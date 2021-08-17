@@ -243,8 +243,5 @@
             "unitTestRunner": "jest"
         }
     },
-    "resolutions": {
-        "webpack": "^5.0.0"
-    },
     "defaultProject": "shell"
 }
