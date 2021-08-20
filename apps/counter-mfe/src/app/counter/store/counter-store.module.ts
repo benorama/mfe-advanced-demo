@@ -13,10 +13,9 @@ import {CounterEffects} from './counter.effects';
             fromCounter.COUNTER_FEATURE_KEY,
             fromCounter.reducer
         ),
-        /* This does not work... 
         EffectsModule.forFeature([
-            CounterEffects,
-        ])*/
+            CounterEffects
+        ])
     ],
 })
 export class CounterStoreModule {
