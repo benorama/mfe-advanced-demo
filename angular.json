@@ -144,7 +144,10 @@
                         "main": "apps/shell/src/main.ts",
                         "polyfills": "apps/shell/src/polyfills.ts",
                         "tsConfig": "apps/shell/tsconfig.app.json",
-                        "assets": ["apps/shell/src/favicon.ico", "apps/shell/src/assets"],
+                        "assets": [
+                            "apps/shell/src/favicon.ico",
+                            "apps/shell/src/assets"
+                        ],
                         "styles": ["apps/shell/src/styles.scss"],
                         "scripts": [],
                         "extraWebpackConfig": "apps/shell/webpack.config.js"
