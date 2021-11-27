@@ -21,7 +21,8 @@
                     }
                 }
             },
-            "schematics": {}
+            "schematics": {},
+            "tags": []
         },
         "counter-mfe": {
             "projectType": "application",
@@ -120,7 +121,8 @@
                         "extraWebpackConfig": "apps/counter-mfe/webpack.config.js"
                     }
                 }
-            }
+            },
+            "tags": []
         },
         "shell": {
             "projectType": "application",
@@ -219,12 +221,9 @@
                         "extraWebpackConfig": "apps/shell/webpack.config.js"
                     }
                 }
-            }
+            },
+            "tags": []
         }
-    },
-    "cli": {
-        "defaultCollection": "@nrwl/angular",
-        "packageManager": "yarn"
     },
     "schematics": {
         "@nrwl/angular": {
@@ -245,6 +244,5 @@
         "@nrwl/angular:library": {
             "unitTestRunner": "jest"
         }
-    },
-    "defaultProject": "shell"
+    }
 }
