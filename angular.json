@@ -52,8 +52,7 @@
                         ],
                         "styles": ["apps/counter-mfe/src/styles.scss"],
                         "scripts": [],
-                        "extraWebpackConfig": "apps/counter-mfe/webpack.config.js",
-                        "commonChunk": false
+                        "extraWebpackConfig": "apps/counter-mfe/webpack.config.js"
                     },
                     "configurations": {
                         "production": {
@@ -154,8 +153,7 @@
                         ],
                         "styles": ["apps/shell/src/styles.scss"],
                         "scripts": [],
-                        "extraWebpackConfig": "apps/shell/webpack.config.js",
-                        "commonChunk": false
+                        "extraWebpackConfig": "apps/shell/webpack.config.js"
                     },
                     "configurations": {
                         "production": {

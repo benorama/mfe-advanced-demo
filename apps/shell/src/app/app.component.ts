@@ -10,7 +10,7 @@ import {AUTH_FEATURE_KEY, AuthState} from '@demo/auth-lib';
     templateUrl: './app.component.html',
 })
 export class AppComponent {
-    
+
     @HostBinding('attr.class') class = 'h-100 w-100 d-flex mx-auto';
 
     auth$: Observable<AuthState>;
