@@ -52,7 +52,8 @@
                         ],
                         "styles": ["apps/counter-mfe/src/styles.scss"],
                         "scripts": [],
-                        "extraWebpackConfig": "apps/counter-mfe/webpack.config.js"
+                        "extraWebpackConfig": "apps/counter-mfe/webpack.config.js",
+                        "commonChunk": false
                     },
                     "configurations": {
                         "production": {
@@ -92,7 +93,8 @@
                     "options": {
                         "browserTarget": "counter-mfe:build",
                         "extraWebpackConfig": "apps/counter-mfe/webpack.config.js",
-                        "port": 4300
+                        "port": 4300,
+                        "publicHost": "http://localhost:4300"
                     },
                     "configurations": {
                         "production": {
@@ -152,7 +154,8 @@
                         ],
                         "styles": ["apps/shell/src/styles.scss"],
                         "scripts": [],
-                        "extraWebpackConfig": "apps/shell/webpack.config.js"
+                        "extraWebpackConfig": "apps/shell/webpack.config.js",
+                        "commonChunk": false
                     },
                     "configurations": {
                         "production": {

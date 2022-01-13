@@ -11,7 +11,8 @@ sharedMappings.register(
 module.exports = {
     output: {
         uniqueName: "shell",
-        publicPath: "auto"
+        publicPath: "auto",
+
     },
     optimization: {
         // Only needed to bypass a temporary bug
@@ -22,12 +23,15 @@ module.exports = {
             ...sharedMappings.getAliases(),
         }
     },
+    experiments: {
+        outputModule: true
+    },
     plugins: [
         new ModuleFederationPlugin({
 
-            remotes: {
-                 "counter-remote": "counter@http://localhost:4300/counterRemoteEntry.js",
-            },
+            library: { type: "module" },
+
+            remotes: {},
 
             shared: share({
                 "@angular/core": {singleton: true, strictVersion: false},

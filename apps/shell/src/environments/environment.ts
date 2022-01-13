@@ -4,6 +4,7 @@
 
 export const environment = {
     production: false,
+    counterRemoteEntryUrl: 'http://localhost:4300/counterRemoteEntry.js'
 };
 
 /*
