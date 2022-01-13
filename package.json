@@ -29,7 +29,7 @@
     },
     "private": true,
     "dependencies": {
-        "@angular-architects/module-federation": "12.4.0",
+        "@angular-architects/module-federation": "14.0.1",
         "@angular/animations": "13.1.2",
         "@angular/common": "13.1.2",
         "@angular/compiler": "13.1.2",
