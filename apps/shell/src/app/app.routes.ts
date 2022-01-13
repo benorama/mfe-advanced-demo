@@ -1,8 +1,9 @@
 import {Routes} from '@angular/router';
 import {loadRemoteModule} from '@angular-architects/module-federation';
-import {Microfrontend} from "./microfrontends/microfrontend";
 
 import {HomeComponent} from './home/home.component';
+import {environment} from "../environments/environment";
+import {AuthGuard} from "@demo/auth-lib";
 
 export const APP_ROUTES: Routes = [
     {
@@ -14,16 +15,15 @@ export const APP_ROUTES: Routes = [
         path: 'login',
         // Lazy loaded local module
         loadChildren: () => import('./login/login-route.module').then(m => m.LoginRouteModule)
-    }
+    },
+    {
+        path: 'counter',
+        canActivate: [AuthGuard],
+        loadChildren: () =>
+            loadRemoteModule({
+                type: 'module',
+                remoteEntry: environment.counterRemoteEntryUrl,
+                exposedModule: './Module'
+            }).then(m => m.CounterRouteModule)
+    },
 ];
-
-export function buildRoutes(options: Microfrontend[]): Routes {
-
-    const lazyRoutes: Routes = options.map(o => ({
-        canActivate: o.routeCanActivate,
-        path: o.routePath,
-        loadChildren: () => loadRemoteModule(o).then(m => m[o.ngModuleName])
-    }));
-
-    return [...APP_ROUTES, ...lazyRoutes];
-}
