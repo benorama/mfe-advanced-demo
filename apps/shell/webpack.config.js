@@ -11,8 +11,7 @@ sharedMappings.register(
 module.exports = {
     output: {
         uniqueName: "shell",
-        publicPath: "auto",
-        scriptType: "text/javascript"
+        publicPath: "auto"
     },
     optimization: {
         // Only needed to bypass a temporary bug
