@@ -21,7 +21,8 @@
                     }
                 }
             },
-            "schematics": {}
+            "schematics": {},
+            "tags": []
         },
         "counter-mfe": {
             "projectType": "application",
@@ -120,7 +121,8 @@
                         "extraWebpackConfig": "apps/counter-mfe/webpack.config.js"
                     }
                 }
-            }
+            },
+            "tags": []
         },
         "shell": {
             "projectType": "application",
@@ -219,32 +221,8 @@
                         "extraWebpackConfig": "apps/shell/webpack.config.js"
                     }
                 }
-            }
-        }
-    },
-    "cli": {
-        "defaultCollection": "@nrwl/angular",
-        "packageManager": "yarn"
-    },
-    "schematics": {
-        "@nrwl/angular": {
-            "application": {
-                "linter": "eslint"
             },
-            "library": {
-                "linter": "eslint"
-            },
-            "storybook-configuration": {
-                "linter": "eslint"
-            }
-        },
-        "@nrwl/angular:application": {
-            "unitTestRunner": "jest",
-            "e2eTestRunner": "cypress"
-        },
-        "@nrwl/angular:library": {
-            "unitTestRunner": "jest"
+            "tags": []
         }
-    },
-    "defaultProject": "shell"
+    }
 }

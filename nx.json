@@ -18,19 +18,9 @@
         "default": {
             "runner": "@nrwl/workspace/tasks-runners/default",
             "options": {
-                "cacheableOperations": ["build", "lint", "test", "e2e"]
+                "cacheableOperations": ["build", "lint", "test", "e2e"],
+                "parallel": 1
             }
-        }
-    },
-    "projects": {
-        "auth-lib": {
-            "tags": []
-        },
-        "counter-mfe": {
-            "tags": []
-        },
-        "shell": {
-            "tags": []
         }
     },
     "targetDependencies": {
@@ -40,5 +30,30 @@
                 "projects": "dependencies"
             }
         ]
+    },
+    "cli": {
+        "defaultCollection": "@nrwl/angular",
+        "packageManager": "yarn"
+    },
+    "defaultProject": "shell",
+    "generators": {
+        "@nrwl/angular": {
+            "application": {
+                "linter": "eslint"
+            },
+            "library": {
+                "linter": "eslint"
+            },
+            "storybook-configuration": {
+                "linter": "eslint"
+            }
+        },
+        "@nrwl/angular:application": {
+            "unitTestRunner": "jest",
+            "e2eTestRunner": "cypress"
+        },
+        "@nrwl/angular:library": {
+            "unitTestRunner": "jest"
+        }
     }
 }
