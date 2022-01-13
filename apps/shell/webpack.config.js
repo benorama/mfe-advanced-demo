@@ -12,7 +12,7 @@ module.exports = {
     output: {
         uniqueName: "shell",
         publicPath: "auto",
-
+        scriptType: "text/javascript"
     },
     optimization: {
         // Only needed to bypass a temporary bug
