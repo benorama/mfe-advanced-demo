@@ -22,13 +22,18 @@ module.exports = {
             ...sharedMappings.getAliases(),
         }
     },
+    experiments: {
+        outputModule: true
+    },
     plugins: [
         new ModuleFederationPlugin({
+
+            library: { type: "module" },
 
             name: "counter",
             filename: "counterRemoteEntry.js",
             exposes: {
-                './counter-route.module': './apps/counter-mfe/src/app/counter/counter-route.module.ts'
+                './Module': './apps/counter-mfe/src/app/counter/counter-route.module.ts'
             },
 
             shared: share({

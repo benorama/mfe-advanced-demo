@@ -1,8 +1,9 @@
 import {Routes} from '@angular/router';
-
-import {AuthGuard} from '@demo/auth-lib';
+import {loadRemoteModule} from '@angular-architects/module-federation';
 
 import {HomeComponent} from './home/home.component';
+import {environment} from "../environments/environment";
+import {AuthGuard} from "@demo/auth-lib";
 
 export const APP_ROUTES: Routes = [
     {
@@ -17,8 +18,12 @@ export const APP_ROUTES: Routes = [
     },
     {
         path: 'counter',
-        // Lazy loaded remote module
-        loadChildren: () => import('counter-remote/counter-route.module').then((m) => m.CounterRouteModule),
         canActivate: [AuthGuard],
+        loadChildren: () =>
+            loadRemoteModule({
+                type: 'module',
+                remoteEntry: environment.counterRemoteEntryUrl,
+                exposedModule: './Module'
+            }).then(m => m.CounterRouteModule)
     },
 ];

@@ -22,12 +22,15 @@ module.exports = {
             ...sharedMappings.getAliases(),
         }
     },
+    experiments: {
+        outputModule: true
+    },
     plugins: [
         new ModuleFederationPlugin({
 
-            remotes: {
-                 "counter-remote": "counter@http://localhost:4300/counterRemoteEntry.js",
-            },
+            library: { type: "module" },
+
+            remotes: {},
 
             shared: share({
                 "@angular/core": {singleton: true, strictVersion: false},
