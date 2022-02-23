@@ -10,9 +10,7 @@
                 "lint": {
                     "builder": "@nrwl/linter:eslint",
                     "options": {
-                        "lintFilePatterns": [
-                            "libs/auth-lib/src/**/*.ts"
-                        ]
+                        "lintFilePatterns": ["libs/auth-lib/src/**/*.ts"]
                     }
                 },
                 "test": {
@@ -52,9 +50,7 @@
                             "apps/counter-mfe/src/favicon.ico",
                             "apps/counter-mfe/src/assets"
                         ],
-                        "styles": [
-                            "apps/counter-mfe/src/styles.scss"
-                        ],
+                        "styles": ["apps/counter-mfe/src/styles.scss"],
                         "scripts": [],
                         "extraWebpackConfig": "apps/counter-mfe/webpack.config.js"
                     },
@@ -115,9 +111,7 @@
                 "lint": {
                     "builder": "@nrwl/linter:eslint",
                     "options": {
-                        "lintFilePatterns": [
-                            "apps/counter-mfe/src/**/*.ts"
-                        ]
+                        "lintFilePatterns": ["apps/counter-mfe/src/**/*.ts"]
                     }
                 },
                 "test": {
@@ -157,9 +151,7 @@
                             "apps/shell/src/favicon.ico",
                             "apps/shell/src/assets"
                         ],
-                        "styles": [
-                            "apps/shell/src/styles.scss"
-                        ],
+                        "styles": ["apps/shell/src/styles.scss"],
                         "scripts": [],
                         "extraWebpackConfig": "apps/shell/webpack.config.js"
                     },
@@ -219,9 +211,7 @@
                 "lint": {
                     "builder": "@nrwl/linter:eslint",
                     "options": {
-                        "lintFilePatterns": [
-                            "apps/shell/src/**/*.ts"
-                        ]
+                        "lintFilePatterns": ["apps/shell/src/**/*.ts"]
                     }
                 },
                 "test": {
