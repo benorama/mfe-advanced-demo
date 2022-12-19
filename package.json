@@ -30,14 +30,14 @@
     "private": true,
     "dependencies": {
         "@angular-architects/module-federation": "14.1.1",
-        "@angular/animations": "13.2.1",
-        "@angular/common": "13.2.1",
-        "@angular/compiler": "13.2.1",
-        "@angular/core": "13.2.1",
-        "@angular/forms": "13.2.1",
-        "@angular/platform-browser": "13.2.1",
-        "@angular/platform-browser-dynamic": "13.2.1",
-        "@angular/router": "13.2.1",
+        "@angular/animations": "14.2.12",
+        "@angular/common": "14.2.12",
+        "@angular/compiler": "14.2.12",
+        "@angular/core": "14.2.12",
+        "@angular/forms": "14.2.12",
+        "@angular/platform-browser": "14.2.12",
+        "@angular/platform-browser-dynamic": "14.2.12",
+        "@angular/router": "14.2.12",
         "@ngrx/effects": "13.0.2",
         "@ngrx/router-store": "13.0.2",
         "@ngrx/store": "13.0.2",
@@ -47,10 +47,10 @@
         "zone.js": "0.11.4"
     },
     "devDependencies": {
-        "@angular-devkit/build-angular": "13.2.2",
-        "@angular/cli": "13.2.2",
-        "@angular/compiler-cli": "13.2.1",
-        "@angular/language-service": "13.2.1",
+        "@angular-devkit/build-angular": "14.2.10",
+        "@angular/cli": "14.2.10",
+        "@angular/compiler-cli": "14.2.12",
+        "@angular/language-service": "14.2.12",
         "@ngrx/schematics": "13.0.2",
         "@ngrx/store-devtools": "13.0.2",
         "@nrwl/cli": "13.8.3",
@@ -76,7 +76,6 @@
         "ts-jest": "27.0.5",
         "ts-node": "~7.0.0",
         "tslint": "~6.1.3",
-        "typescript": "4.5.5"
+        "typescript": "4.8.4"
     }
 }
-
