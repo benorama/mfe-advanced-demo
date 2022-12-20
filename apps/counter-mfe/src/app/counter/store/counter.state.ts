@@ -2,6 +2,6 @@ export interface CounterState {
     total: number;
 }
 
-export let initialCounterState: CounterState = {
+export const counterInitialState: CounterState = {
     total: 0
 };

@@ -13,7 +13,7 @@ export class LoginPageComponent {
 
     constructor(private store: Store<any>) {}
 
-    login(userName) {
+    login(userName: string) {
         this.store.dispatch(login({userName}));
         return false;
     }

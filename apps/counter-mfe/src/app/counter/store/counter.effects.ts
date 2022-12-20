@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {map} from 'rxjs/operators';
-import * as CounterActions from './counter.actions';
+import {CounterActions} from './counter.actions';
 
 @Injectable()
 export class CounterEffects {
@@ -12,7 +12,7 @@ export class CounterEffects {
     // Simple effect to test effects in mfe
     login$ = createEffect(() => this.actions$.pipe(
         ofType(CounterActions.increment),
-        map((action) => CounterActions.incrementSucccess())
+        map((action) => CounterActions.incrementSuccess())
     ));
 
 }
