@@ -1,8 +1,9 @@
-import {loadRemoteEntry} from '@angular-architects/module-federation';
-import {environment} from './environments/environment';
+import {loadManifest} from '@angular-architects/module-federation';
+import {environment} from "./environments/environment";
 
-Promise.all([
-    loadRemoteEntry({ type: 'module', remoteEntry: environment.counterRemoteEntryUrl})
-])
-    .then(() => import('./bootstrap'))
-    .catch(err => console.error('error', err));
+const manifest = "/assets/mf.manifest" + (environment.production ? '.prod' : '') + ".json";
+
+loadManifest(manifest)
+    .catch(err => console.error(err))
+    .then(_ => import('./bootstrap'))
+    .catch(err => console.error(err));

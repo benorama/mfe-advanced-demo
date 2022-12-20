@@ -19,11 +19,10 @@ export const APP_ROUTES: Routes = [
     {
         path: 'counter',
         canActivate: [AuthGuard],
-        loadChildren: () =>
-            loadRemoteModule({
-                type: 'module',
-                remoteEntry: environment.counterRemoteEntryUrl,
-                exposedModule: './Module'
-            }).then(m => m.CounterRouteModule)
+        loadChildren: () =>  loadRemoteModule({
+            type: 'manifest',
+            remoteName: 'counter-mfe',
+            exposedModule: './Module'
+        }).then(m => m.CounterRouteModule)
     },
 ];
